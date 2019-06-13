@@ -1,0 +1,10 @@
+<h2> <%=@blogger.name%>'s Show Page </h2>
+ <p>Age: <%=@blogger.age%></p>
+ <p>Bio: <%=@blogger.bio%></p>
+
+<h3>Likes</h3>
+<% total = 0 %>
+<% @blogger.posts.each do |post| %>
+<% total += post.likes%>
+<%end%>
+<%= total %>

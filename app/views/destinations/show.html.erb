@@ -1,0 +1,23 @@
+<h2><%=@destination.name%></h2>
+
+<h3>Located in the country of <%=@destination.country%></h3>
+
+<h4>Most Recent Posts</h4>
+<ul>
+<% @destination.posts.each do |des_post|%>
+<li>
+<%=link_to des_post.title, post_path(des_post.id) %>
+</li>
+<%end%>
+
+<% total = 0%>
+<% num = 0%>
+<%avg = 0%>
+
+<% @destination.bloggers.each do |des_blogger| %>
+<% total += des_blogger.age %>
+<% num = num + 1%>
+<% end %>
+<% avg = total / num %>
+
+<h4>Average age of bloggers: <%=avg%></h4>
