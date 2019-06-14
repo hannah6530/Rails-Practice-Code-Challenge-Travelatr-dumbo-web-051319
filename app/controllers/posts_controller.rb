@@ -24,9 +24,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    # @blogger = @post.blogger
-    @blogger = Blogger.find(params[:id])
-    @destination = Destination.find(params[:id])
+    @blogger = @post.blogger
+    # @blogger = Blogger.find(params[:id])
+    # @destination = Destination.find(params[:id])
+    @destination = @post.destination
 
   end
 
