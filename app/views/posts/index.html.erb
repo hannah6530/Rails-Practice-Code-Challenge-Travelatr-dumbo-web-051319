@@ -4,7 +4,7 @@
 <h2> Blog Posts </h2>
 
 <ul>
-<% @posts.each_with_index do |a_post, index| %>
+<% @posts.each do |a_post| %>
 <p><li><%=link_to a_post.title, a_post%></li></p>
 <%end%>
 </ul>

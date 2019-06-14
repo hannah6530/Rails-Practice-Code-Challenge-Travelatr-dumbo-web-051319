@@ -10,3 +10,7 @@
 
 <h3>Location</h3>
 <p>Blog was written in <%=link_to @post.destination.name, destination_path(@post.destination.id)%> </p>
+
+<br>
+
+<%= button_to "Delete #{@post.title}", "/posts/#{@post.id}", method: :delete %>

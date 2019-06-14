@@ -16,6 +16,12 @@ class BloggersController < ApplicationController
     redirect_to blogger
   end
 
+  def destroy
+    blogger = Blogger.find(params[:id])
+    blogger.destroy
+    redirect_to blogger
+  end
+
   private
 
   def blogger_params

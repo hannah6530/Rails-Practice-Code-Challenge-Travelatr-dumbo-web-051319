@@ -21,3 +21,7 @@
 <% avg = total / num %>
 
 <h4>Average age of bloggers: <%=avg%></h4>
+
+<br>
+
+<%= button_to "Delete #{@destination.name}", "/destinations/#{@destination.id}", method: :delete %>

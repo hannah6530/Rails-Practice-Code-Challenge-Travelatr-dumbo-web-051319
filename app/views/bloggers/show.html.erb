@@ -2,9 +2,22 @@
  <p>Age: <%=@blogger.age%></p>
  <p>Bio: <%=@blogger.bio%></p>
 
+
+ <h3>Posts</h3>
+ <%@blogger.posts.each do |blog_post|%>
+
+ <%=link_to blog_post.title, blog_post%>
+
+ <%end%>
+ 
 <h3>Likes</h3>
 <% total = 0 %>
 <% @blogger.posts.each do |post| %>
 <% total += post.likes%>
 <%end%>
 <%= total %>
+
+<br>
+<br>
+
+<%= button_to "Delete #{@blogger.name}", "/bloggers/#{@blogger.id}", method: :delete %>
